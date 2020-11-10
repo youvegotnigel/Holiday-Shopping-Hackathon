@@ -1,0 +1,10 @@
+/.idea
+/.settings
+.project
+.classpath
+Holiday-Shopping-Hackathon.iml
+*.iml
+target
+test-output
+allure-report
+allure-results
