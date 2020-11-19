@@ -2,6 +2,7 @@ package base;
 
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.selenium.Eyes;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class EyesManager {
@@ -21,6 +22,14 @@ public class EyesManager {
         eyes.open(driver, appName, Thread.currentThread().getStackTrace()[2].getMethodName());
         eyes.setForceFullPageScreenshot(true);
         eyes.checkWindow();
+        eyes.close();
+    }
+
+    public void validateWindow2(){
+        eyes.open(driver, appName, Thread.currentThread().getStackTrace()[2].getMethodName());
+        eyes.setForceFullPageScreenshot(true);
+        //eyes.checkWindow();
+        eyes.checkRegion(By.id("product_grid"));
         eyes.close();
     }
 

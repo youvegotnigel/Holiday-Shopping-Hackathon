@@ -6,7 +6,7 @@ public class MainPageV1Test extends BaseTests {
     //private MainPageV1 mainPageV1 = new MainPageV1(driver);
 
     @Test
-    public void launchApp() {
+    public void test1() {
 
         eyesManager.setBatchName("Testing Lifecycle");
         driver.get(System.getProperty("site.main_page_v1.url"));
@@ -15,9 +15,12 @@ public class MainPageV1Test extends BaseTests {
     }
 
     @Test
-    public void test1(){
+    public void test2(){
         mainPageV1.checkBlackBox();
         mainPageV1.clickFilterButton();
+        eyesManager.setBatchName("Testing Lifecycle");
+        eyesManager.validateWindow2();
+
     }
 
 
