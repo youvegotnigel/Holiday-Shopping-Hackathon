@@ -13,9 +13,15 @@ public class EyesManager {
     public EyesManager(WebDriver driver, String appName) {
         this.driver = driver;
         this.appName = appName;
-
         eyes = new Eyes();
         eyes.setApiKey(System.getProperty("applitools.api.key"));
+    }
+
+    public void validateWindow(){
+        eyes.open(driver, appName, Thread.currentThread().getStackTrace()[2].getMethodName());
+        eyes.setForceFullPageScreenshot(true);
+        eyes.checkWindow();
+        eyes.close();
     }
 
     public void setBatchName(String batchName){

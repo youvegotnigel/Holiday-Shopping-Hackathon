@@ -8,8 +8,9 @@ public class MainPageV1Test extends BaseTests {
     @Test
     public void launchApp() {
 
-        eyesManager.setBatchName("Testing Lifecycle”");
+        eyesManager.setBatchName("Testing Lifecycle");
         driver.get(System.getProperty("site.main_page_v1.url"));
+        eyesManager.validateWindow();
         //driver.get("https://demo.applitools.com/tlcHackathonMasterV1.html#0");
     }
 
