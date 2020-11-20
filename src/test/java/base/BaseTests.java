@@ -3,7 +3,6 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.MainPageV1;
@@ -16,7 +15,8 @@ public class BaseTests {
 
     protected static WebDriver driver;
     protected static EyesManager eyesManager;
-    protected MainPageV1 mainPageV1;
+    protected MainPageV1 page;
+    protected static String testName;
 
 
     @BeforeClass
@@ -30,30 +30,34 @@ public class BaseTests {
             System.exit(-1);
         }
 
-        System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
         driver = new ChromeDriver();
         goHome();
 
-        eyesManager = new EyesManager(driver, "AppliFashion");
+        eyesManager = new EyesManager(driver, System.getProperty("applitools.appName"));
     }
 
     public void goHome(){
-        //driver.get("https://demo.applitools.com/tlcHackathonMasterV1.html#0");
+
         driver.manage().window().maximize();
-        mainPageV1 = new MainPageV1(driver);
+        page = new MainPageV1(driver);
 
     }
 
-    private static ChromeOptions getChromeOptions(){
-        ChromeOptions options = new ChromeOptions();
-        //options.setHeadless(true);
-        return options;
-    }
+//    private static ChromeOptions getChromeOptions(){
+//        ChromeOptions options = new ChromeOptions();
+//        //options.setHeadless(true);
+//        return options;
+//    }
 
 
     @AfterClass
     public static void tearDown() {
         driver.quit();
         eyesManager.abort();
+    }
+
+    public static String getTestName() {
+        return testName;
     }
 }
