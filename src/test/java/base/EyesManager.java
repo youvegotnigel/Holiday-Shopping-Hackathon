@@ -52,6 +52,13 @@ public class EyesManager {
         closeEyes();
     }
 
+    public void test3(){
+        openEyes();
+        eyes.setForceFullPageScreenshot(true);
+        eyes.checkWindow();
+        closeEyes();
+    }
+
     public void EyesConfig(){
         eyesConfig = new Configuration();
         // Visual Grid configurations
