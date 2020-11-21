@@ -39,21 +39,21 @@ public class EyesManager {
     }
 
     public void test1(){
-        openEyes();
+        openEyes("Test 1");
         eyes.setForceFullPageScreenshot(true);
         eyes.checkWindow("main page");
         closeEyes();
     }
 
     public void test2(WebElement element){
-        openEyes();
+        openEyes("Test 2");
         eyes.setForceFullPageScreenshot(true);
         eyes.checkRegion(element,"filter by color");
         closeEyes();
     }
 
     public void test3(){
-        openEyes();
+        openEyes("Test 3");
         eyes.setForceFullPageScreenshot(true);
         eyes.checkWindow("product details");
         closeEyes();
@@ -79,8 +79,8 @@ public class EyesManager {
         eyesIsOpen=false;
     }
 
-    public void openEyes(){
-        eyes.open(driver, appName, Thread.currentThread().getStackTrace()[2].getMethodName());
+    public void openEyes(String testName){
+        eyes.open(driver, appName, testName);
         eyesIsOpen=true;
     }
 
