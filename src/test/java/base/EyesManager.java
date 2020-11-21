@@ -41,21 +41,21 @@ public class EyesManager {
     public void test1(){
         openEyes();
         eyes.setForceFullPageScreenshot(true);
-        eyes.checkWindow();
+        eyes.checkWindow("main page");
         closeEyes();
     }
 
     public void test2(WebElement element){
         openEyes();
         eyes.setForceFullPageScreenshot(true);
-        eyes.checkRegion(element);
+        eyes.checkRegion(element,"filter by color");
         closeEyes();
     }
 
     public void test3(){
         openEyes();
         eyes.setForceFullPageScreenshot(true);
-        eyes.checkWindow();
+        eyes.checkWindow("product details");
         closeEyes();
     }
 
@@ -70,7 +70,7 @@ public class EyesManager {
         eyesConfig.addBrowser(1200, 800, BrowserType.CHROME);
         //eyesConfig.addBrowser(1024, 786, BrowserType.CHROME);
         //eyesConfig.addDeviceEmulation(DeviceName.iPhone_X, ScreenOrientation.PORTRAIT);
-        eyesConfig.setTestName("Test 1");
+        //eyesConfig.setTestName("Test 1");
 
     }
 
