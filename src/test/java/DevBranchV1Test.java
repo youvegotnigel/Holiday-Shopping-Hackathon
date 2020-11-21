@@ -3,7 +3,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class MainPageV1Test extends BaseTests {
+public class DevBranchV1Test extends BaseTests {
+
 
     @BeforeClass
     public static void startVisualTestSuite(){
@@ -12,13 +13,13 @@ public class MainPageV1Test extends BaseTests {
 
     @Test(testName = "main page")
     public void test1() {
-        driver.get(System.getProperty("site.main_page_v1.url"));
+        driver.get(System.getProperty("site.dev_branch.url"));
         eyesManager.test1();
     }
 
     @Test(testName = "filter by color")
     public void test2(){
-        driver.get(System.getProperty("site.main_page_v1.url"));
+        driver.get(System.getProperty("site.dev_branch.url"));
         page.checkBlackBox();
         page.clickFilterButton();
         eyesManager.test2(page.getProductRegion());
@@ -26,9 +27,9 @@ public class MainPageV1Test extends BaseTests {
 
     @Test(testName = "product details")
     public void test3(){
-        driver.get(System.getProperty("site.main_page_v1.url"));
+        driver.get(System.getProperty("site.dev_branch.url"));
         page.clickShoe();
-        Assert.assertEquals("https://demo.applitools.com/tlcHackathonProductDetailsMasterV1.html?id=1", driver.getCurrentUrl());
+        Assert.assertEquals("https://demo.applitools.com/tlcHackathonProductDetailsDev.html?id=1", driver.getCurrentUrl());
         eyesManager.test3();
     }
 
