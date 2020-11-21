@@ -17,6 +17,7 @@ public class EyesManager {
     private Eyes eyes;
     private String appName;
     private WebDriver driver;
+
     private static Configuration eyesConfig;
     private static EyesRunner runner=null;
     private static boolean eyesIsOpen=false;
@@ -25,12 +26,11 @@ public class EyesManager {
         this.driver = driver;
         this.appName = appName;
 
-        eyesIsOpen=false;
+        //eyesIsOpen=false;
         if(runner==null) EyesConfig();
         if(eyes==null) {
-            eyes = new Eyes();
+            eyes = new Eyes(runner);
             eyes.setConfiguration(eyesConfig);
-            eyes.setApiKey(System.getProperty("applitools.api.key"));
         }
     }
 
@@ -60,11 +60,18 @@ public class EyesManager {
     }
 
     public void EyesConfig(){
-        eyesConfig = new Configuration();
+        eyesConfig = (Configuration) new Configuration();
+        eyesConfig.setApiKey(System.getProperty("applitools.api.key"));
+
+        // Create a runner with concurrency of 1
+        runner = new VisualGridRunner(1);
+
         // Visual Grid configurations
-        eyesConfig.addBrowser(1200, 800, BrowserType.CHROME)
-                  .addBrowser(1024, 786, BrowserType.FIREFOX)
-                  .setTestName("Test 1");
+        eyesConfig.addBrowser(1200, 800, BrowserType.CHROME);
+        //eyesConfig.addBrowser(1024, 786, BrowserType.CHROME);
+        //eyesConfig.addDeviceEmulation(DeviceName.iPhone_X, ScreenOrientation.PORTRAIT);
+        eyesConfig.setTestName("Test 1");
+
     }
 
     public void setDriver(WebDriver myDriver){
@@ -81,8 +88,6 @@ public class EyesManager {
         eyesIsOpen=false;
         eyes.close();
     }
-
-
 
     public void abort() {
         eyes.abortIfNotClosed();

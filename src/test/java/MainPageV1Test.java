@@ -7,7 +7,7 @@ public class MainPageV1Test extends BaseTests {
 
     @BeforeClass
     public static void startVisualTestSuite(){
-        eyesManager.setBatchName("Testing Lifecycle");
+        eyesManager.setBatchName(System.getProperty("applitools.batchName"));
     }
 
     @Test(testName = "Test 1")
