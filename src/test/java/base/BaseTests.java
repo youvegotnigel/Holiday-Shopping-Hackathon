@@ -2,7 +2,6 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.MainPageV1;
@@ -30,7 +29,7 @@ public class BaseTests {
             System.exit(-1);
         }
 
-        //System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
         driver = new ChromeDriver();
         goHome();
 
@@ -43,13 +42,6 @@ public class BaseTests {
         page = new MainPageV1(driver);
 
     }
-
-//    private static ChromeOptions getChromeOptions(){
-//        ChromeOptions options = new ChromeOptions();
-//        //options.setHeadless(true);
-//        return options;
-//    }
-
 
     @AfterClass
     public static void tearDown() {
