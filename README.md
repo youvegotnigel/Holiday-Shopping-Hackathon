@@ -1,8 +1,6 @@
-# Technical Interview
+# Applitools Holiday Shopping Hackathon
 
-Article Link: [doc](https://docs.google.com/document/d/1Pft9V_D_0oni5WInxFxbDdvft61NdvPVmK8bSh72acs/edit?usp=sharing)<br />
-Github Link: [github](https://github.com/youvegotnigel/TechnicalInterview.git)<br />
-Medium Link: [medium](https://medium.com/automationmaster/appium-mobile-app-automation-406bf8b0fd80)<br />
+This is [my](https://github.com/youvegotnigel/Holiday-Shopping-Hackathon) submission for [Applitools Holiday Shopping Hackathon](https://applitools.com/hackathon-v20-3-instructions/)<br />
 
 ## How to find "appPackage" and "appActivity"
 ```bash
@@ -12,5 +10,4 @@ open the desired application on the mobile device.
 run- adb shell
 run- dumpsys window windows
 ```
-![Find them here](resources/image.PNG?raw=true "appPackage and appActivity")
 
