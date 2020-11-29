@@ -67,10 +67,10 @@ public class EyesManager {
 
         // Visual Grid configurations
         eyesConfig.addBrowser(1200, 800, BrowserType.CHROME);
-//        eyesConfig.addBrowser(1200, 800, BrowserType.FIREFOX);
-//        eyesConfig.addBrowser(1200, 800, BrowserType.EDGE_CHROMIUM);
-//        eyesConfig.addBrowser(1200, 800, BrowserType.SAFARI);
-//        eyesConfig.addDeviceEmulation(DeviceName.iPhone_X, ScreenOrientation.PORTRAIT);
+        eyesConfig.addBrowser(1200, 800, BrowserType.FIREFOX);
+        eyesConfig.addBrowser(1200, 800, BrowserType.EDGE_CHROMIUM);
+        eyesConfig.addBrowser(1200, 800, BrowserType.SAFARI);
+        eyesConfig.addDeviceEmulation(DeviceName.iPhone_X, ScreenOrientation.PORTRAIT);
         //eyesConfig.setTestName("Test 1");
 
     }
