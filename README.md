@@ -2,12 +2,14 @@
 
 This is [my](https://github.com/youvegotnigel/Holiday-Shopping-Hackathon) submission for [Applitools Holiday Shopping Hackathon](https://applitools.com/hackathon-v20-3-instructions/)<br />
 
-## How to find "appPackage" and "appActivity"
+## Tests Run
 ```bash
-connect device and make sure usb debugging is on.
-run- adb devices
-open the desired application on the mobile device.
-run- adb shell
-run- dumpsys window windows
+All tests `mvn test`
 ```
 
+## Tools
+* [Maven](https://maven.apache.org/) - Dependency manager
+* [TestNG](https://testng.org/) - Testing Framework
+
+## Author
+* **Nigel Mulholland** - [Linkedin](https://www.linkedin.com/in/nigel-mulholland/) 
