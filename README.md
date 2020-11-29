@@ -5,6 +5,7 @@ This is [my](https://github.com/youvegotnigel/Holiday-Shopping-Hackathon) submis
 ## Tests Run
 ```bash
 All tests `mvn test`
+run `allure generate` to genarate allure report
 ```
 
 ## Tools
